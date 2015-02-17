@@ -5,13 +5,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public GUIText countText;
-    // public GUIText winText;
+    //public GUIText winText;
     private int count;
 
     void Start()
     {
        count = 0;
-       //  winText.text = "";
+       //winText.text = "";
        countText = GameObject.Find("Count Text").GetComponent<GUIText>();
        SetCountText();
     }
@@ -36,7 +36,11 @@ public class PlayerController : MonoBehaviour
     }
     void SetCountText()
     {
-        countText.text = string.Format("My Score: {0}\nOther Player: {1}", 
-            count, PlayerPrefs.GetInt("OtherPlayerScore"));
+       countText.text = string.Format("My Score: {0}", count);
+
+      /* if (count >= 13 || count == 6)
+       {
+           winText.text = string.Format("You Won!");
+       }*/
     }
 }
