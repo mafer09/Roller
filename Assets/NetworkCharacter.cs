@@ -5,6 +5,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
 
     Vector3 realPosition = Vector3.zero;
     Quaternion realRotation = Quaternion.identity;
+    //public GUIText winText;
     private int myCount = 0;
     private int combineCount = 0;
     public AudioClip BiteSound;
@@ -13,12 +14,12 @@ public class NetworkCharacter : Photon.MonoBehaviour {
     void UpdateCount()
     {
         //countText.text = string.Format("My Count: {0}\nPlayer 2: {1}", myCount, combineCount);
-        countText.text = string.Format("My Count: {0}", myCount);
+        //countText.text = string.Format("My Count: {0}", myCount);
     }
 
 	void Start () {
-        countText = GameObject.Find("Count Text").GetComponent<GUIText>();
-
+        //countText = GameObject.Find("Count Text").GetComponent<GUIText>();
+        //Bite = ;
 	}
 	
 	void Update () {
@@ -60,6 +61,7 @@ public class NetworkCharacter : Photon.MonoBehaviour {
         {
             
             other.gameObject.SetActive(false);
+
             audio.Play();
             myCount++;
         }
